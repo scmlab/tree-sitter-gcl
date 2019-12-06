@@ -12,23 +12,6 @@ x := 0
     (integer)))
 
 ==================
-Boolean
-==================
-
-x := True
-x := False
-
----
-
-(source_file
-  (assign
-    (variable)
-    (boolean))
-  (assign
-    (variable)
-    (boolean)))
-
-==================
 Variable
 ==================
 

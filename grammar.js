@@ -49,6 +49,7 @@ module.exports = grammar({
       $.skip,
       $.abort,
       $.assign,
+      $.assert,
     ),
 
     skip: $ => 'skip',
@@ -59,6 +60,12 @@ module.exports = grammar({
       $.variable,
       ':=',
       $._expr,
+    ),
+
+    assert: $ => seq(
+      '{',
+      $._pred,
+      '}',
     ),
 
     ////////////////////////////////////////////////////////////////////////
@@ -84,10 +91,31 @@ module.exports = grammar({
     _term: $ => choice(
         prec(998, seq( '(', $._expr, ')')),
         $.integer,
-        $.boolean,
         $.variable,
         $.constant,
     ),
+
+    ////////////////////////////////////////////////////////////////////////
+    // Predicates
+    ////////////////////////////////////////////////////////////////////////
+
+    _pred: $ => choice(
+        prec(999, seq( '(', $._pred, ')')),
+        $.boolean,
+        $.eq,
+        $.neq,
+        $.gt,
+        $.gte,
+        $.lt,
+        $.lte,
+    ),
+
+    eq:  $ => prec.left(800, seq($._expr, '=', $._expr)),
+    neq: $ => prec.left(800, seq($._expr, '!=', $._expr)),
+    gt:  $ => prec.left(800, seq($._expr, '>', $._expr)),
+    gte: $ => prec.left(800, seq($._expr, '>=', $._expr)),
+    lt:  $ => prec.left(800, seq($._expr, '<', $._expr)),
+    lte: $ => prec.left(800, seq($._expr, '<=', $._expr)),
 
     ////////////////////////////////////////////////////////////////////////
     // Components

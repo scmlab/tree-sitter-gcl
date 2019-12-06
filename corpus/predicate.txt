@@ -1,0 +1,29 @@
+==================
+Boolean
+==================
+
+{ True }
+{ False }
+
+---
+
+(source_file
+  (assert
+    (boolean))
+  (assert
+    (boolean)))
+
+==================
+Predicate
+==================
+
+{ X = x + 1 }
+
+---
+
+(source_file
+  (assert
+    (eq
+      (constant)
+      (add (variable) (integer))
+    )))
