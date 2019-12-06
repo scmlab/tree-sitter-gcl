@@ -70,7 +70,8 @@ Assert with bound
 If 0
 ==================
 
-if True -> skip fi
+if True -> skip
+fi
 
 ---
 

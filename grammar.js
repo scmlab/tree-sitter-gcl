@@ -11,6 +11,16 @@ const upperName = /[A-Z][\\_\\-\\'a-zA-Z0-9]*/;
 module.exports = grammar({
   name: 'GCL',
 
+
+  extras: $ => [
+    /\s|\\n/,
+  ],
+
+  externals: $ => [
+    $._newline,
+  ],
+
+
   rules: {
 
     source_file: $ => seq(
@@ -22,9 +32,12 @@ module.exports = grammar({
     // Declarations
     ////////////////////////////////////////////////////////////////////////
 
-    _declaration: $ => choice(
+    _declaration: $ => seq(
+      choice(
       $.variable_declaration,
       $.constant_declaration,
+      ),
+      $._newline
     ),
 
     variable_declaration: $ => seq(
@@ -45,15 +58,18 @@ module.exports = grammar({
     // Statements
     ////////////////////////////////////////////////////////////////////////
 
-    _statement: $ => choice(
-      $.skip,
-      $.abort,
-      $.assign,
-      $.assert,
-      $.assert_with_bound,
-      $.if,
-      $.do,
-      $.spec,
+    _statement: $ => seq(
+      choice(
+        $.skip,
+        $.abort,
+        $.assign,
+        $.assert,
+        $.assert_with_bound,
+        $.if,
+        $.do,
+        $.spec,
+      ),
+      $._newline
     ),
 
     skip: $ => 'skip',
@@ -96,6 +112,7 @@ module.exports = grammar({
 
     spec: $ => seq(
       '{!',
+      $._newline,
       repeat($._statement),
       '!}',
     ),

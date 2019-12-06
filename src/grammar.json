@@ -21,15 +21,24 @@
       ]
     },
     "_declaration": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "variable_declaration"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "variable_declaration"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "constant_declaration"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
-          "name": "constant_declaration"
+          "name": "_newline"
         }
       ]
     },
@@ -76,39 +85,48 @@
       ]
     },
     "_statement": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "skip"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "skip"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "abort"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "assign"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "assert"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "assert_with_bound"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "if"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "do"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "spec"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
-          "name": "abort"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "assign"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "assert"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "assert_with_bound"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "if"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "do"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "spec"
+          "name": "_newline"
         }
       ]
     },
@@ -227,6 +245,10 @@
         {
           "type": "STRING",
           "value": "{!"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
         },
         {
           "type": "REPEAT",
@@ -717,11 +739,16 @@
   "extras": [
     {
       "type": "PATTERN",
-      "value": "\\s"
+      "value": "\\s|\\\\n"
     }
   ],
   "conflicts": [],
-  "externals": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "_newline"
+    }
+  ],
   "inline": [],
   "supertypes": []
 }
