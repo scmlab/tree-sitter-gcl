@@ -27,3 +27,16 @@ abort
   (abort)
   (abort)
   (abort))
+
+==================
+Assign
+==================
+
+x := 0
+
+---
+
+(source_file
+  (assign
+    (variable)
+    (integer)))
