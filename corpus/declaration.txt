@@ -1,0 +1,14 @@
+==================
+variable declaration
+==================
+
+var x : Int
+var x, y : Int
+
+---
+
+(source_file
+  (variable_declaration
+    (variable) (type))
+  (variable_declaration
+    (variable) (variable) (type)))
