@@ -1,0 +1,27 @@
+{
+  "name": "tree-sitter-gcl",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx tree-sitter test",
+    "generate": "npx tree-sitter generate",
+    "iterate": "npx tree-sitter generate && npx tree-sitter test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scmlab/tree-sitter-gcl.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scmlab/tree-sitter-gcl/issues"
+  },
+  "homepage": "https://github.com/scmlab/tree-sitter-gcl#readme",
+  "dependencies": {
+    "nan": "^2.14.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.15.14"
+  }
+}
