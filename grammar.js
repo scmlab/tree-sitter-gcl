@@ -125,11 +125,19 @@ module.exports = grammar({
     // expressions
     _expr: $ => choice(
         prec(999, seq( '(', $._expr, ')')),
+        $.op,
         $.mul,
         $.div,
         $.add,
         $.sub,
         $._term,
+    ),
+
+    op: $ => seq(
+      $.op_name,
+      '(',
+      sepBy(',', $._expr),
+      ')'
     ),
 
     // left associative
@@ -174,6 +182,7 @@ module.exports = grammar({
     variable: $ => lowerName,
     constant: $ => upperName,
     type: $ => upperName,
+    op_name: $ => lowerName,
 
     integer: $ => integer,
     boolean: $ => choice('True', 'False'),

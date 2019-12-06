@@ -289,6 +289,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "op"
+        },
+        {
+          "type": "SYMBOL",
           "name": "mul"
         },
         {
@@ -306,6 +310,48 @@
         {
           "type": "SYMBOL",
           "name": "_term"
+        }
+      ]
+    },
+    "op": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "op_name"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_expr"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": ","
+                  }
+                ]
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_expr"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         }
       ]
     },
@@ -622,6 +668,10 @@
     "type": {
       "type": "PATTERN",
       "value": "[A-Z][\\\\_\\\\-\\\\'a-zA-Z0-9]*"
+    },
+    "op_name": {
+      "type": "PATTERN",
+      "value": "[a-z][\\\\_\\\\-\\\\'a-zA-Z0-9]*"
     },
     "integer": {
       "type": "PATTERN",

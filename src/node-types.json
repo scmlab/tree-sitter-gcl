@@ -28,6 +28,10 @@
           "named": true
         },
         {
+          "type": "op",
+          "named": true
+        },
+        {
           "type": "sub",
           "named": true
         },
@@ -134,6 +138,10 @@
           "named": true
         },
         {
+          "type": "op",
+          "named": true
+        },
+        {
           "type": "sub",
           "named": true
         },
@@ -170,6 +178,10 @@
         },
         {
           "type": "mul",
+          "named": true
+        },
+        {
+          "type": "op",
           "named": true
         },
         {
@@ -241,6 +253,10 @@
           "named": true
         },
         {
+          "type": "op",
+          "named": true
+        },
+        {
           "type": "sub",
           "named": true
         },
@@ -295,6 +311,10 @@
           "named": true
         },
         {
+          "type": "op",
+          "named": true
+        },
+        {
           "type": "sub",
           "named": true
         },
@@ -334,6 +354,10 @@
           "named": true
         },
         {
+          "type": "op",
+          "named": true
+        },
+        {
           "type": "sub",
           "named": true
         },
@@ -370,6 +394,10 @@
         },
         {
           "type": "mul",
+          "named": true
+        },
+        {
+          "type": "op",
           "named": true
         },
         {
@@ -498,6 +526,10 @@
           "named": true
         },
         {
+          "type": "op",
+          "named": true
+        },
+        {
           "type": "sub",
           "named": true
         },
@@ -534,6 +566,10 @@
         },
         {
           "type": "mul",
+          "named": true
+        },
+        {
+          "type": "op",
           "named": true
         },
         {
@@ -576,6 +612,10 @@
           "named": true
         },
         {
+          "type": "op",
+          "named": true
+        },
+        {
           "type": "sub",
           "named": true
         },
@@ -615,6 +655,10 @@
           "named": true
         },
         {
+          "type": "op",
+          "named": true
+        },
+        {
           "type": "sub",
           "named": true
         },
@@ -624,6 +668,58 @@
         }
       ]
     }
+  },
+  {
+    "type": "op",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "div",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "mul",
+          "named": true
+        },
+        {
+          "type": "op",
+          "named": true
+        },
+        {
+          "type": "op_name",
+          "named": true
+        },
+        {
+          "type": "sub",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "op_name",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "source_file",
@@ -748,6 +844,10 @@
           "named": true
         },
         {
+          "type": "op",
+          "named": true
+        },
+        {
           "type": "sub",
           "named": true
         },
@@ -760,6 +860,11 @@
   },
   {
     "type": "type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "variable",
     "named": true,
     "fields": {}
   },
@@ -897,10 +1002,6 @@
   {
     "type": "var",
     "named": false
-  },
-  {
-    "type": "variable",
-    "named": true
   },
   {
     "type": "{",
