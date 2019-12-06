@@ -1,0 +1,15 @@
+==================
+Comment
+==================
+
+skip
+-- skip
+skip --skip
+
+---
+
+(source_file
+  (skip)
+  (comment)
+  (skip)
+  (comment))

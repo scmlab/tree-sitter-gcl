@@ -13,6 +13,7 @@ module.exports = grammar({
 
 
   extras: $ => [
+    $.comment,
     /\s|\\n/,
   ],
 
@@ -187,6 +188,14 @@ module.exports = grammar({
     ),
 
     _guarded_command_list: $ => sepBy('|', $.guarded_command),
+
+    ////////////////////////////////////////////////////////////////////////
+    // Comment
+    ////////////////////////////////////////////////////////////////////////
+
+    comment: $ => token(choice(
+        prec(100, seq('--', /.*/)),
+    )),
 
   }
 });
