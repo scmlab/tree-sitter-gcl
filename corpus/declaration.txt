@@ -1,5 +1,5 @@
 ==================
-variable declaration
+Variable declaration
 ==================
 
 var x : Int
@@ -12,3 +12,18 @@ var x, y : Int
     (variable) (type))
   (variable_declaration
     (variable) (variable) (type)))
+
+==================
+Constant declaration
+==================
+
+con X : Int
+con X, Y : Int
+
+---
+
+(source_file
+  (constant_declaration
+    (constant) (type))
+  (constant_declaration
+    (constant) (constant) (type)))

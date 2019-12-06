@@ -1,5 +1,29 @@
 [
   {
+    "type": "constant",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "constant_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -8,11 +32,20 @@
       "required": false,
       "types": [
         {
+          "type": "constant_declaration",
+          "named": true
+        },
+        {
           "type": "variable_declaration",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "type",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "variable_declaration",
@@ -42,8 +75,8 @@
     "named": false
   },
   {
-    "type": "type",
-    "named": true
+    "type": "con",
+    "named": false
   },
   {
     "type": "var",

@@ -23,12 +23,19 @@ module.exports = grammar({
 
     _declaration: $ => choice(
       $.variable_declaration,
-      // $.constant_declaration,
+      $.constant_declaration,
     ),
 
     variable_declaration: $ => seq(
       'var',
       $._variable_list,
+      ':',
+      $.type
+    ),
+
+    constant_declaration: $ => seq(
+      'con',
+      $._constant_list,
       ':',
       $.type
     ),
@@ -42,8 +49,11 @@ module.exports = grammar({
     ////////////////////////////////////////////////////////////////////////
 
     variable: $ => lowerName,
+    constant: $ => upperName,
     type: $ => upperName,
+
     _variable_list: $ => sepBy(',', $.variable),
+    _constant_list: $ => sepBy(',', $.constant),
 
 
   }
