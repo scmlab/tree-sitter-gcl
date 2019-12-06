@@ -96,6 +96,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "assert_with_bound"
+        },
+        {
+          "type": "SYMBOL",
           "name": "if"
         },
         {
@@ -139,6 +143,39 @@
         {
           "type": "SYMBOL",
           "name": "_pred"
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "assert_with_bound": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_pred"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "STRING",
+          "value": "bnd"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expr"
         },
         {
           "type": "STRING",

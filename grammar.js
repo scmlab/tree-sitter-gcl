@@ -50,6 +50,7 @@ module.exports = grammar({
       $.abort,
       $.assign,
       $.assert,
+      $.assert_with_bound,
       $.if,
       $.do,
     ),
@@ -67,6 +68,16 @@ module.exports = grammar({
     assert: $ => seq(
       '{',
       $._pred,
+      '}',
+    ),
+
+    assert_with_bound: $ => seq(
+      '{',
+      $._pred,
+      ',',
+      'bnd',
+      ':',
+      $._expr,
       '}',
     ),
 

@@ -78,6 +78,73 @@
     }
   },
   {
+    "type": "assert_with_bound",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "div",
+          "named": true
+        },
+        {
+          "type": "eq",
+          "named": true
+        },
+        {
+          "type": "gt",
+          "named": true
+        },
+        {
+          "type": "gte",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "lt",
+          "named": true
+        },
+        {
+          "type": "lte",
+          "named": true
+        },
+        {
+          "type": "mul",
+          "named": true
+        },
+        {
+          "type": "neq",
+          "named": true
+        },
+        {
+          "type": "sub",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "assign",
     "named": true,
     "fields": {},
@@ -333,6 +400,10 @@
           "named": true
         },
         {
+          "type": "assert_with_bound",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -567,6 +638,10 @@
           "named": true
         },
         {
+          "type": "assert_with_bound",
+          "named": true
+        },
+        {
           "type": "assign",
           "named": true
         },
@@ -731,6 +806,10 @@
   {
     "type": "abort",
     "named": true
+  },
+  {
+    "type": "bnd",
+    "named": false
   },
   {
     "type": "con",

@@ -54,6 +54,19 @@ Assert
     (boolean)))
 
 ==================
+Assert with bound
+==================
+
+{ True, bnd: 100 }
+
+---
+
+(source_file
+  (assert_with_bound
+    (boolean)
+    (integer)))
+
+==================
 If 0
 ==================
 
