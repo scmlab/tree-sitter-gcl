@@ -93,6 +93,10 @@
         {
           "type": "SYMBOL",
           "name": "assert"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "if"
         }
       ]
     },
@@ -135,6 +139,23 @@
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "if": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "if"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_guarded_command_list"
+        },
+        {
+          "type": "STRING",
+          "value": "fi"
         }
       ]
     },
@@ -562,6 +583,51 @@
         {
           "type": "SYMBOL",
           "name": "constant"
+        }
+      ]
+    },
+    "guarded_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_pred"
+        },
+        {
+          "type": "STRING",
+          "value": "->"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_statement"
+          }
+        }
+      ]
+    },
+    "_guarded_command_list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "guarded_command"
+              },
+              {
+                "type": "STRING",
+                "value": "|"
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "guarded_command"
         }
       ]
     }

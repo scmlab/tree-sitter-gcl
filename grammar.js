@@ -50,6 +50,7 @@ module.exports = grammar({
       $.abort,
       $.assign,
       $.assert,
+      $.if,
     ),
 
     skip: $ => 'skip',
@@ -66,6 +67,12 @@ module.exports = grammar({
       '{',
       $._pred,
       '}',
+    ),
+
+    if: $ => seq(
+      'if',
+      $._guarded_command_list,
+      'fi',
     ),
 
     ////////////////////////////////////////////////////////////////////////
@@ -131,6 +138,13 @@ module.exports = grammar({
     _variable_list: $ => sepBy(',', $.variable),
     _constant_list: $ => sepBy(',', $.constant),
 
+    guarded_command: $ => seq(
+      $._pred,
+      '->',
+      repeat1($._statement),
+    ),
+
+    _guarded_command_list: $ => sepBy('|', $.guarded_command),
 
   }
 });
