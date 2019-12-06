@@ -32,7 +32,15 @@
       "required": false,
       "types": [
         {
+          "type": "abort",
+          "named": true
+        },
+        {
           "type": "constant_declaration",
+          "named": true
+        },
+        {
+          "type": "skip",
           "named": true
         },
         {
@@ -75,8 +83,16 @@
     "named": false
   },
   {
+    "type": "abort",
+    "named": true
+  },
+  {
     "type": "con",
     "named": false
+  },
+  {
+    "type": "skip",
+    "named": true
   },
   {
     "type": "var",

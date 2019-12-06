@@ -1,0 +1,29 @@
+==================
+Skip
+==================
+
+skip
+skip
+skip
+
+---
+
+(source_file
+  (skip)
+  (skip)
+  (skip))
+
+==================
+Abort
+==================
+
+abort
+abort
+abort
+
+---
+
+(source_file
+  (abort)
+  (abort)
+  (abort))
