@@ -51,6 +51,7 @@ module.exports = grammar({
       $.assign,
       $.assert,
       $.if,
+      $.do,
     ),
 
     skip: $ => 'skip',
@@ -73,6 +74,12 @@ module.exports = grammar({
       'if',
       $._guarded_command_list,
       'fi',
+    ),
+
+    do: $ => seq(
+      'do',
+      $._guarded_command_list,
+      'od',
     ),
 
     ////////////////////////////////////////////////////////////////////////

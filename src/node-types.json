@@ -185,6 +185,21 @@
     }
   },
   {
+    "type": "do",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "guarded_command",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "eq",
     "named": true,
     "fields": {},
@@ -323,6 +338,10 @@
         },
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "do",
           "named": true
         },
         {
@@ -556,6 +575,10 @@
           "named": true
         },
         {
+          "type": "do",
+          "named": true
+        },
+        {
           "type": "if",
           "named": true
         },
@@ -714,6 +737,10 @@
     "named": false
   },
   {
+    "type": "do",
+    "named": false
+  },
+  {
     "type": "fi",
     "named": false
   },
@@ -724,6 +751,10 @@
   {
     "type": "integer",
     "named": true
+  },
+  {
+    "type": "od",
+    "named": false
   },
   {
     "type": "skip",

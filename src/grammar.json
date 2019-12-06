@@ -97,6 +97,10 @@
         {
           "type": "SYMBOL",
           "name": "if"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "do"
         }
       ]
     },
@@ -156,6 +160,23 @@
         {
           "type": "STRING",
           "value": "fi"
+        }
+      ]
+    },
+    "do": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "do"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_guarded_command_list"
+        },
+        {
+          "type": "STRING",
+          "value": "od"
         }
       ]
     },

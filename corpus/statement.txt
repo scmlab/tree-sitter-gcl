@@ -65,7 +65,6 @@ if True -> skip fi
   (if
     (guarded_command (boolean) (skip))))
 
-
 ==================
 If 1
 ==================
@@ -80,3 +79,16 @@ fi
   (if
     (guarded_command (boolean) (skip))
     (guarded_command (boolean) (abort))))
+
+==================
+Do
+==================
+
+do True -> skip
+od
+
+---
+
+(source_file
+  (do
+    (guarded_command (boolean) (skip))))
