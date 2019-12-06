@@ -160,6 +160,9 @@ module.exports = grammar({
     _pred: $ => choice(
         prec(999, seq( '(', $._pred, ')')),
         $.boolean,
+        $.neg,
+        $.and,
+        $.or,
         $.eq,
         $.neq,
         $.gt,
@@ -168,12 +171,16 @@ module.exports = grammar({
         $.lte,
     ),
 
-    eq:  $ => prec.left(800, seq($._expr, '=', $._expr)),
-    neq: $ => prec.left(800, seq($._expr, '!=', $._expr)),
-    gt:  $ => prec.left(800, seq($._expr, '>', $._expr)),
-    gte: $ => prec.left(800, seq($._expr, '>=', $._expr)),
-    lt:  $ => prec.left(800, seq($._expr, '<', $._expr)),
-    lte: $ => prec.left(800, seq($._expr, '<=', $._expr)),
+    neg: $ => prec.left(803, seq('~', $._pred)),
+    and:  $ => prec.left(802, seq($._pred, '&&', $._pred)),
+    or:  $ => prec.left(801, seq($._pred, '||', $._pred)),
+
+    eq:  $ => prec.left(810, seq($._expr, '=', $._expr)),
+    neq: $ => prec.left(810, seq($._expr, '!=', $._expr)),
+    gt:  $ => prec.left(810, seq($._expr, '>', $._expr)),
+    gte: $ => prec.left(810, seq($._expr, '>=', $._expr)),
+    lt:  $ => prec.left(810, seq($._expr, '<', $._expr)),
+    lte: $ => prec.left(810, seq($._expr, '<=', $._expr)),
 
     ////////////////////////////////////////////////////////////////////////
     // Components

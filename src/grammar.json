@@ -507,6 +507,18 @@
         },
         {
           "type": "SYMBOL",
+          "name": "neg"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "and"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "or"
+        },
+        {
+          "type": "SYMBOL",
           "name": "eq"
         },
         {
@@ -531,9 +543,68 @@
         }
       ]
     },
+    "neg": {
+      "type": "PREC_LEFT",
+      "value": 803,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "~"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_pred"
+          }
+        ]
+      }
+    },
+    "and": {
+      "type": "PREC_LEFT",
+      "value": 802,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_pred"
+          },
+          {
+            "type": "STRING",
+            "value": "&&"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_pred"
+          }
+        ]
+      }
+    },
+    "or": {
+      "type": "PREC_LEFT",
+      "value": 801,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_pred"
+          },
+          {
+            "type": "STRING",
+            "value": "||"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_pred"
+          }
+        ]
+      }
+    },
     "eq": {
       "type": "PREC_LEFT",
-      "value": 800,
+      "value": 810,
       "content": {
         "type": "SEQ",
         "members": [
@@ -554,7 +625,7 @@
     },
     "neq": {
       "type": "PREC_LEFT",
-      "value": 800,
+      "value": 810,
       "content": {
         "type": "SEQ",
         "members": [
@@ -575,7 +646,7 @@
     },
     "gt": {
       "type": "PREC_LEFT",
-      "value": 800,
+      "value": 810,
       "content": {
         "type": "SEQ",
         "members": [
@@ -596,7 +667,7 @@
     },
     "gte": {
       "type": "PREC_LEFT",
-      "value": 800,
+      "value": 810,
       "content": {
         "type": "SEQ",
         "members": [
@@ -617,7 +688,7 @@
     },
     "lt": {
       "type": "PREC_LEFT",
-      "value": 800,
+      "value": 810,
       "content": {
         "type": "SEQ",
         "members": [
@@ -638,7 +709,7 @@
     },
     "lte": {
       "type": "PREC_LEFT",
-      "value": 800,
+      "value": 810,
       "content": {
         "type": "SEQ",
         "members": [

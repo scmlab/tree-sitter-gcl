@@ -17,13 +17,17 @@ Boolean
 Predicate
 ==================
 
-{ X = x + 1 }
+{ X = x + 1 && True || ~False }
 
 ---
 
 (source_file
   (assert
-    (eq
-      (constant)
-      (add (variable) (integer))
-    )))
+    (or
+      (and
+        (eq
+          (constant)
+          (add (variable) (integer))
+        )
+        (boolean))
+      (neg (boolean)))))
