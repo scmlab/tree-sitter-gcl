@@ -105,3 +105,32 @@ od
 (source_file
   (do
     (guarded_command (boolean) (skip))))
+
+==================
+Spec
+==================
+
+{!
+!}
+
+{!
+skip
+!}
+
+{!
+  skip
+  {!
+  skip
+  !}
+!}
+
+---
+
+(source_file
+  (spec)
+  (spec
+    (skip))
+  (spec
+    (skip)
+    (spec
+      (skip))))

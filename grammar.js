@@ -53,6 +53,7 @@ module.exports = grammar({
       $.assert_with_bound,
       $.if,
       $.do,
+      $.spec,
     ),
 
     skip: $ => 'skip',
@@ -91,6 +92,12 @@ module.exports = grammar({
       'do',
       $._guarded_command_list,
       'od',
+    ),
+
+    spec: $ => seq(
+      '{!',
+      repeat($._statement),
+      '!}',
     ),
 
     ////////////////////////////////////////////////////////////////////////

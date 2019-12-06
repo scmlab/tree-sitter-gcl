@@ -446,6 +446,10 @@
         {
           "type": "skip",
           "named": true
+        },
+        {
+          "type": "spec",
+          "named": true
         }
       ]
     }
@@ -662,7 +666,54 @@
           "named": true
         },
         {
+          "type": "spec",
+          "named": true
+        },
+        {
           "type": "variable_declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "spec",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "abort",
+          "named": true
+        },
+        {
+          "type": "assert",
+          "named": true
+        },
+        {
+          "type": "assert_with_bound",
+          "named": true
+        },
+        {
+          "type": "assign",
+          "named": true
+        },
+        {
+          "type": "do",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "skip",
+          "named": true
+        },
+        {
+          "type": "spec",
           "named": true
         }
       ]
@@ -733,6 +784,10 @@
   },
   {
     "type": "!=",
+    "named": false
+  },
+  {
+    "type": "!}",
     "named": false
   },
   {
@@ -849,6 +904,10 @@
   },
   {
     "type": "{",
+    "named": false
+  },
+  {
+    "type": "{!",
     "named": false
   },
   {
