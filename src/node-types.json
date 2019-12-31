@@ -16,6 +16,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -65,10 +69,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -103,6 +103,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -155,7 +159,90 @@
           "named": true
         },
         {
-          "type": "op",
+          "type": "or",
+          "named": true
+        },
+        {
+          "type": "sub",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "app",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "and",
+          "named": true
+        },
+        {
+          "type": "app",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "div",
+          "named": true
+        },
+        {
+          "type": "eq",
+          "named": true
+        },
+        {
+          "type": "gt",
+          "named": true
+        },
+        {
+          "type": "gte",
+          "named": true
+        },
+        {
+          "type": "imp",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "lt",
+          "named": true
+        },
+        {
+          "type": "lte",
+          "named": true
+        },
+        {
+          "type": "mul",
+          "named": true
+        },
+        {
+          "type": "neg",
+          "named": true
+        },
+        {
+          "type": "neq",
           "named": true
         },
         {
@@ -190,6 +277,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -239,10 +330,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -277,6 +364,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -326,10 +417,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -364,6 +451,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -413,10 +504,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -480,6 +567,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -529,10 +620,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -582,6 +669,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -631,10 +722,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -669,6 +756,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -718,10 +809,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -756,6 +843,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -805,10 +896,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -844,6 +931,10 @@
         },
         {
           "type": "and",
+          "named": true
+        },
+        {
+          "type": "app",
           "named": true
         },
         {
@@ -919,10 +1010,6 @@
           "named": true
         },
         {
-          "type": "op",
-          "named": true
-        },
-        {
           "type": "or",
           "named": true
         },
@@ -977,6 +1064,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -1026,10 +1117,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -1064,6 +1151,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -1113,10 +1204,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -1151,6 +1238,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -1200,10 +1291,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -1238,6 +1325,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -1287,10 +1378,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -1325,6 +1412,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -1374,10 +1465,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -1412,90 +1499,7 @@
           "named": true
         },
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "constant",
-          "named": true
-        },
-        {
-          "type": "div",
-          "named": true
-        },
-        {
-          "type": "eq",
-          "named": true
-        },
-        {
-          "type": "gt",
-          "named": true
-        },
-        {
-          "type": "gte",
-          "named": true
-        },
-        {
-          "type": "imp",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "lt",
-          "named": true
-        },
-        {
-          "type": "lte",
-          "named": true
-        },
-        {
-          "type": "mul",
-          "named": true
-        },
-        {
-          "type": "neg",
-          "named": true
-        },
-        {
-          "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
-          "named": true
-        },
-        {
-          "type": "or",
-          "named": true
-        },
-        {
-          "type": "sub",
-          "named": true
-        },
-        {
-          "type": "variable",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "op",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "add",
-          "named": true
-        },
-        {
-          "type": "and",
+          "type": "app",
           "named": true
         },
         {
@@ -1551,14 +1555,6 @@
           "named": true
         },
         {
-          "type": "op",
-          "named": true
-        },
-        {
-          "type": "op_name",
-          "named": true
-        },
-        {
           "type": "or",
           "named": true
         },
@@ -1572,11 +1568,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "op_name",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "or",
@@ -1595,6 +1586,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -1644,10 +1639,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {
@@ -1776,6 +1767,10 @@
           "named": true
         },
         {
+          "type": "app",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -1825,10 +1820,6 @@
         },
         {
           "type": "neq",
-          "named": true
-        },
-        {
-          "type": "op",
           "named": true
         },
         {

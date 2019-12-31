@@ -1,0 +1,67 @@
+==================
+Simple
+==================
+
+{ f x }
+
+---
+
+(source_file
+  (assert
+    (app
+      (variable)
+      (variable))))
+
+==================
+Complex 1
+==================
+
+{ (f x) (g y) }
+
+---
+
+(source_file
+  (assert
+    (app
+      (app
+        (variable)
+        (variable))
+      (app
+        (variable)
+        (variable)))))
+
+==================
+Complex 2
+==================
+
+{ f (g h) k }
+
+---
+
+(source_file
+  (assert
+    (app
+      (app
+        (variable)
+        (app
+          (variable)
+          (variable)))
+      (variable))))
+
+==================
+Complex 3
+==================
+
+{ f g = h k }
+
+---
+
+(source_file
+  (assert
+    (eq
+      (app
+        (variable)
+        (variable))
+      (app
+        (variable)
+        (variable)))))

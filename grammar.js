@@ -125,7 +125,7 @@ module.exports = grammar({
     // expressions
     _expr: $ => choice(
         prec(999, seq( '(', $._expr, ')')),
-        $.op,
+        $.app,
         // numerical
         $.mul,
         $.div,
@@ -148,24 +148,20 @@ module.exports = grammar({
         $._term,
     ),
 
-    op: $ => seq(
-      $.op_name,
-      '(',
-      sepBy(',', $._expr),
-      ')'
-    ),
+    // function application
+    app: $ => prec.left(999, seq($._expr, $._expr)),
 
-    // left associative
+    // numerical
     mul: $ => prec.left(810, seq($._expr, '*', $._expr)),
     div: $ => prec.left(810, seq($._expr, '/', $._expr)),
     add: $ => prec.left(809, seq($._expr, '+', $._expr)),
     sub: $ => prec.left(809, seq($._expr, '-', $._expr)),
-
+    // logical
     imp: $ => prec.right(801, seq($._expr, '=>', $._expr)),
     or:  $ => prec.left(802, seq($._expr, '||', $._expr)),
     and: $ => prec.left(803, seq($._expr, '&&', $._expr)),
     neg: $ => prec.right(804, seq('~', $._expr)),
-
+    // relational
     eq:  $ => prec.left(805, seq($._expr, '=', $._expr)),
     neq: $ => prec.left(805, seq($._expr, '/=', $._expr)),
     gt:  $ => prec.left(805, seq($._expr, '>', $._expr)),

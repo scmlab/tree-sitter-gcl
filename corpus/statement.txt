@@ -67,7 +67,7 @@ Assert with bound
     (integer)))
 
 ==================
-If 0
+If 1
 ==================
 
 if True -> skip
@@ -80,7 +80,7 @@ fi
     (guarded_command (boolean) (skip))))
 
 ==================
-If 1
+If 2
 ==================
 
 if True -> skip
