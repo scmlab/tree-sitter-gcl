@@ -85,13 +85,13 @@ module.exports = grammar({
 
     assert: $ => seq(
       '{',
-      $._pred,
+      $._expr,
       '}',
     ),
 
     assert_with_bound: $ => seq(
       '{',
-      $._pred,
+      $._expr,
       ',',
       'bnd',
       ':',
@@ -126,10 +126,26 @@ module.exports = grammar({
     _expr: $ => choice(
         prec(999, seq( '(', $._expr, ')')),
         $.op,
+
         $.mul,
         $.div,
         $.add,
         $.sub,
+
+        $.boolean,
+
+        $.imp,
+        $.or,
+        $.and,
+        $.neg,
+
+        $.eq,
+        $.neq,
+        $.gt,
+        $.gte,
+        $.lt,
+        $.lte,
+
         $._term,
     ),
 
@@ -141,10 +157,22 @@ module.exports = grammar({
     ),
 
     // left associative
-    mul: $ => prec.left(802, seq($._expr, '*', $._expr)),
-    div: $ => prec.left(802, seq($._expr, '/', $._expr)),
-    add: $ => prec.left(801, seq($._expr, '+', $._expr)),
-    sub: $ => prec.left(801, seq($._expr, '-', $._expr)),
+    mul: $ => prec.left(810, seq($._expr, '*', $._expr)),
+    div: $ => prec.left(810, seq($._expr, '/', $._expr)),
+    add: $ => prec.left(809, seq($._expr, '+', $._expr)),
+    sub: $ => prec.left(809, seq($._expr, '-', $._expr)),
+
+    imp: $ => prec.right(801, seq($._expr, '=>', $._expr)),
+    or:  $ => prec.left(802, seq($._expr, '||', $._expr)),
+    and: $ => prec.left(803, seq($._expr, '&&', $._expr)),
+    neg: $ => prec.right(804, seq('~', $._expr)),
+
+    eq:  $ => prec.left(805, seq($._expr, '=', $._expr)),
+    neq: $ => prec.left(805, seq($._expr, '/=', $._expr)),
+    gt:  $ => prec.left(805, seq($._expr, '>', $._expr)),
+    gte: $ => prec.left(805, seq($._expr, '>=', $._expr)),
+    lt:  $ => prec.left(805, seq($._expr, '<', $._expr)),
+    lte: $ => prec.left(805, seq($._expr, '<=', $._expr)),
 
     _term: $ => choice(
         prec(998, seq( '(', $._expr, ')')),
@@ -152,35 +180,6 @@ module.exports = grammar({
         $.variable,
         $.constant,
     ),
-
-    ////////////////////////////////////////////////////////////////////////
-    // Predicates
-    ////////////////////////////////////////////////////////////////////////
-
-    _pred: $ => choice(
-        prec(999, seq( '(', $._pred, ')')),
-        $.boolean,
-        $.neg,
-        $.and,
-        $.or,
-        $.eq,
-        $.neq,
-        $.gt,
-        $.gte,
-        $.lt,
-        $.lte,
-    ),
-
-    neg: $ => prec.left(803, seq('~', $._pred)),
-    and:  $ => prec.left(802, seq($._pred, '&&', $._pred)),
-    or:  $ => prec.left(801, seq($._pred, '||', $._pred)),
-
-    eq:  $ => prec.left(810, seq($._expr, '=', $._expr)),
-    neq: $ => prec.left(810, seq($._expr, '!=', $._expr)),
-    gt:  $ => prec.left(810, seq($._expr, '>', $._expr)),
-    gte: $ => prec.left(810, seq($._expr, '>=', $._expr)),
-    lt:  $ => prec.left(810, seq($._expr, '<', $._expr)),
-    lte: $ => prec.left(810, seq($._expr, '<=', $._expr)),
 
     ////////////////////////////////////////////////////////////////////////
     // Components
@@ -198,7 +197,7 @@ module.exports = grammar({
     _constant_list: $ => sepBy(',', $.constant),
 
     guarded_command: $ => seq(
-      $._pred,
+      $._expr,
       '->',
       repeat1($._statement),
     ),
