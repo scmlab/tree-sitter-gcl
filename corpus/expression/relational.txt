@@ -1,0 +1,85 @@
+==================
+EQ
+==================
+
+{ x = y }
+
+---
+
+(source_file
+  (assert
+    (eq
+      (variable)
+      (variable))))
+
+==================
+NEQ
+==================
+
+{ x /= y }
+
+---
+
+(source_file
+  (assert
+    (neq
+      (variable)
+      (variable))))
+
+==================
+LT
+==================
+
+{ x < y }
+
+---
+
+(source_file
+  (assert
+    (lt
+      (variable)
+      (variable))))
+
+
+==================
+LTE
+==================
+
+{ x <= y }
+
+---
+
+(source_file
+  (assert
+    (lte
+      (variable)
+      (variable))))
+
+==================
+GT
+==================
+
+{ x > y }
+
+---
+
+(source_file
+  (assert
+    (gt
+      (variable)
+      (variable))))
+
+
+==================
+GTE
+==================
+
+{ x >= y }
+
+---
+
+(source_file
+  (assert
+    (gte
+      (variable)
+      (variable))))

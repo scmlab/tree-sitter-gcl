@@ -309,10 +309,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "boolean"
-        },
-        {
-          "type": "SYMBOL",
           "name": "imp"
         },
         {
@@ -724,6 +720,10 @@
         {
           "type": "SYMBOL",
           "name": "constant"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "boolean"
         }
       ]
     },

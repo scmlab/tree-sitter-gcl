@@ -1,0 +1,33 @@
+==================
+Boolean
+==================
+
+{ True }
+{ False }
+
+---
+
+(source_file
+  (assert
+    (boolean))
+  (assert
+    (boolean)))
+
+==================
+Logical
+==================
+
+{ A => B && True || ~False }
+
+---
+
+(source_file
+  (assert
+    (imp
+      (constant)
+      (or
+        (and
+          (constant)
+          (boolean))
+        (neg
+          (boolean))))))

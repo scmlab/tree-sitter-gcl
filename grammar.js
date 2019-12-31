@@ -126,19 +126,17 @@ module.exports = grammar({
     _expr: $ => choice(
         prec(999, seq( '(', $._expr, ')')),
         $.op,
-
+        // numerical
         $.mul,
         $.div,
         $.add,
         $.sub,
-
-        $.boolean,
-
+        // logical
         $.imp,
         $.or,
         $.and,
         $.neg,
-
+        // relational
         $.eq,
         $.neq,
         $.gt,
@@ -146,6 +144,7 @@ module.exports = grammar({
         $.lt,
         $.lte,
 
+        // terms
         $._term,
     ),
 
@@ -179,6 +178,7 @@ module.exports = grammar({
         $.integer,
         $.variable,
         $.constant,
+        $.boolean,
     ),
 
     ////////////////////////////////////////////////////////////////////////
