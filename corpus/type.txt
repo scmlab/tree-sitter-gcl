@@ -58,3 +58,20 @@ var x : (Int -> Int) -> Int
         (type)
         (type))
       (type))))
+
+==================
+Array
+==================
+
+var x : array [0 .. N) of Int
+
+---
+
+(source_file
+  (variable_declaration
+    (variable)
+    (type_array
+      (interval
+        (integer)
+        (constant))
+      (type))))

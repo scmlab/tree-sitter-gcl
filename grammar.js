@@ -185,12 +185,27 @@ module.exports = grammar({
     _type: $ => choice(
       prec(999, seq( '(', $._type, ')')),
       $.type_func,
+      $.type_array,
 
       // type terms
       $._type_term,
     ),
 
-    type_func:  $ => prec.right(800, seq($._type, '->', $._type)),
+    type_func: $ => prec.right(800, seq($._type, '->', $._type)),
+    type_array: $ => prec.right(801, seq(
+      'array',
+      $.interval,
+      'of',
+      $._type,
+    )),
+
+    interval: $ => seq(
+      choice('[', '('),
+      $._expr,
+      '..',
+      $._expr,
+      choice(']', ')'),
+    ),
 
     type: $ => upperName,
 
