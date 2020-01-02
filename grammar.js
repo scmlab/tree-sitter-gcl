@@ -45,14 +45,14 @@ module.exports = grammar({
       'var',
       $._variable_list,
       ':',
-      $.type
+      $._type
     ),
 
     constant_declaration: $ => seq(
       'con',
       $._constant_list,
       ':',
-      $.type
+      $._type
     ),
 
     ////////////////////////////////////////////////////////////////////////
@@ -124,28 +124,28 @@ module.exports = grammar({
 
     // expressions
     _expr: $ => choice(
-        prec(999, seq( '(', $._expr, ')')),
-        $.app,
-        // numerical
-        $.mul,
-        $.div,
-        $.add,
-        $.sub,
-        // logical
-        $.imp,
-        $.or,
-        $.and,
-        $.neg,
-        // relational
-        $.eq,
-        $.neq,
-        $.gt,
-        $.gte,
-        $.lt,
-        $.lte,
+      prec(999, seq( '(', $._expr, ')')),
+      $.app,
+      // numerical
+      $.mul,
+      $.div,
+      $.add,
+      $.sub,
+      // logical
+      $.imp,
+      $.or,
+      $.and,
+      $.neg,
+      // relational
+      $.eq,
+      $.neq,
+      $.gt,
+      $.gte,
+      $.lt,
+      $.lte,
 
-        // terms
-        $._term,
+      // terms
+      $._term,
     ),
 
     // function application
@@ -178,12 +178,33 @@ module.exports = grammar({
     ),
 
     ////////////////////////////////////////////////////////////////////////
+    // Types
+    ////////////////////////////////////////////////////////////////////////
+
+    // types
+    _type: $ => choice(
+      prec(999, seq( '(', $._type, ')')),
+      $.type_func,
+
+      // type terms
+      $._type_term,
+    ),
+
+    type_func:  $ => prec.right(800, seq($._type, '->', $._type)),
+
+    type: $ => upperName,
+
+    _type_term: $ => choice(
+        prec(998, seq( '(', $._type, ')')),
+        $.type,
+    ),
+
+    ////////////////////////////////////////////////////////////////////////
     // Components
     ////////////////////////////////////////////////////////////////////////
 
     variable: $ => lowerName,
     constant: $ => upperName,
-    type: $ => upperName,
     op_name: $ => lowerName,
 
     integer: $ => integer,

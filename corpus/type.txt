@@ -1,0 +1,60 @@
+==================
+Simple
+==================
+
+var x : Int
+
+---
+
+(source_file
+  (variable_declaration
+    (variable)
+    (type)))
+
+==================
+Function 1
+==================
+
+var x : Int -> Int
+
+---
+
+(source_file
+  (variable_declaration
+    (variable)
+    (type_func
+      (type) (type))))
+
+==================
+Function 2
+==================
+
+var x : Int -> Int -> Int
+
+---
+
+(source_file
+  (variable_declaration
+    (variable)
+    (type_func
+      (type)
+      (type_func
+        (type)
+        (type)))))
+
+==================
+Function 3
+==================
+
+var x : (Int -> Int) -> Int
+
+---
+
+(source_file
+  (variable_declaration
+    (variable)
+    (type_func
+      (type_func
+        (type)
+        (type))
+      (type))))

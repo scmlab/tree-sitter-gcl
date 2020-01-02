@@ -546,6 +546,10 @@
         {
           "type": "type",
           "named": true
+        },
+        {
+          "type": "type_func",
+          "named": true
         }
       ]
     }
@@ -1843,6 +1847,25 @@
     "fields": {}
   },
   {
+    "type": "type_func",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "type",
+          "named": true
+        },
+        {
+          "type": "type_func",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "variable",
     "named": true,
     "fields": {}
@@ -1857,6 +1880,10 @@
       "types": [
         {
           "type": "type",
+          "named": true
+        },
+        {
+          "type": "type_func",
           "named": true
         },
         {
