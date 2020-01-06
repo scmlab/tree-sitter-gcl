@@ -127,6 +127,7 @@ module.exports = grammar({
       prec(999, seq( '(', $._expr, ')')),
       $.app,
       // numerical
+      $.mod,
       $.mul,
       $.div,
       $.add,
@@ -152,6 +153,7 @@ module.exports = grammar({
     app: $ => prec.left(999, seq($._expr, $._expr)),
 
     // numerical
+    mod: $ => prec.left(811, seq($._expr, '%', $._expr)),
     mul: $ => prec.left(810, seq($._expr, '*', $._expr)),
     div: $ => prec.left(810, seq($._expr, '/', $._expr)),
     add: $ => prec.left(809, seq($._expr, '+', $._expr)),

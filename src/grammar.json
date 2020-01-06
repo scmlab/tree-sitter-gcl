@@ -293,6 +293,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "mod"
+        },
+        {
+          "type": "SYMBOL",
           "name": "mul"
         },
         {
@@ -362,6 +366,27 @@
           {
             "type": "SYMBOL",
             "name": "_expr"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          }
+        ]
+      }
+    },
+    "mod": {
+      "type": "PREC_LEFT",
+      "value": 811,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          },
+          {
+            "type": "STRING",
+            "value": "%"
           },
           {
             "type": "SYMBOL",

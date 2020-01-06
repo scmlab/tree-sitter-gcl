@@ -60,6 +60,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -144,6 +148,10 @@
         },
         {
           "type": "lte",
+          "named": true
+        },
+        {
+          "type": "mod",
           "named": true
         },
         {
@@ -234,6 +242,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -318,6 +330,10 @@
         },
         {
           "type": "lte",
+          "named": true
+        },
+        {
+          "type": "mod",
           "named": true
         },
         {
@@ -408,6 +424,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -492,6 +512,10 @@
         },
         {
           "type": "lte",
+          "named": true
+        },
+        {
+          "type": "mod",
           "named": true
         },
         {
@@ -619,6 +643,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -721,6 +749,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -808,6 +840,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -892,6 +928,10 @@
         },
         {
           "type": "lte",
+          "named": true
+        },
+        {
+          "type": "mod",
           "named": true
         },
         {
@@ -1006,6 +1046,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -1116,6 +1160,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -1200,6 +1248,10 @@
         },
         {
           "type": "lte",
+          "named": true
+        },
+        {
+          "type": "mod",
           "named": true
         },
         {
@@ -1290,6 +1342,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -1374,6 +1430,101 @@
         },
         {
           "type": "lte",
+          "named": true
+        },
+        {
+          "type": "mod",
+          "named": true
+        },
+        {
+          "type": "mul",
+          "named": true
+        },
+        {
+          "type": "neg",
+          "named": true
+        },
+        {
+          "type": "neq",
+          "named": true
+        },
+        {
+          "type": "or",
+          "named": true
+        },
+        {
+          "type": "sub",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mod",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "and",
+          "named": true
+        },
+        {
+          "type": "app",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "div",
+          "named": true
+        },
+        {
+          "type": "eq",
+          "named": true
+        },
+        {
+          "type": "gt",
+          "named": true
+        },
+        {
+          "type": "gte",
+          "named": true
+        },
+        {
+          "type": "imp",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "lt",
+          "named": true
+        },
+        {
+          "type": "lte",
+          "named": true
+        },
+        {
+          "type": "mod",
           "named": true
         },
         {
@@ -1464,6 +1615,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -1548,6 +1703,10 @@
         },
         {
           "type": "lte",
+          "named": true
+        },
+        {
+          "type": "mod",
           "named": true
         },
         {
@@ -1638,6 +1797,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -1722,6 +1885,10 @@
         },
         {
           "type": "lte",
+          "named": true
+        },
+        {
+          "type": "mod",
           "named": true
         },
         {
@@ -1906,6 +2073,10 @@
           "named": true
         },
         {
+          "type": "mod",
+          "named": true
+        },
+        {
           "type": "mul",
           "named": true
         },
@@ -2021,6 +2192,10 @@
   },
   {
     "type": "!}",
+    "named": false
+  },
+  {
+    "type": "%",
     "named": false
   },
   {
