@@ -42,6 +42,21 @@ x := 0
     (integer)))
 
 ==================
+Assign (multiple)
+==================
+
+x, y := 0, 1
+
+---
+
+(source_file
+  (assign
+    (variable)
+    (variable)
+    (integer)
+    (integer)))
+
+==================
 Assert
 ==================
 

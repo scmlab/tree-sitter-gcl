@@ -143,7 +143,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "variable"
+          "name": "_variable_list"
         },
         {
           "type": "STRING",
@@ -151,7 +151,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_expr"
+          "name": "_expr_list"
         }
       ]
     },
@@ -939,6 +939,31 @@
         {
           "type": "SYMBOL",
           "name": "constant"
+        }
+      ]
+    },
+    "_expr_list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_expr"
+              },
+              {
+                "type": "STRING",
+                "value": ","
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expr"
         }
       ]
     },

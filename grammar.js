@@ -78,9 +78,9 @@ module.exports = grammar({
     abort: $ => 'abort',
 
     assign: $ => seq(
-      $.variable,
+      $._variable_list,
       ':=',
-      $._expr,
+      $._expr_list,
     ),
 
     assert: $ => seq(
@@ -227,6 +227,7 @@ module.exports = grammar({
 
     _variable_list: $ => sepBy(',', $.variable),
     _constant_list: $ => sepBy(',', $.constant),
+    _expr_list: $ => sepBy(',', $._expr),
 
     guarded_command: $ => seq(
       $._expr,
