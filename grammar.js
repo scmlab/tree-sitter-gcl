@@ -35,8 +35,8 @@ module.exports = grammar({
 
     _declaration: $ => seq(
       choice(
-      $.variable_declaration,
-      $.constant_declaration,
+        $.variable_declaration,
+        $.constant_declaration,
       ),
       $._newline
     ),
@@ -124,7 +124,7 @@ module.exports = grammar({
 
     // expressions
     _expr: $ => choice(
-      prec(999, seq( '(', $._expr, ')')),
+      prec(999, seq('(', $._expr, ')')),
       $.app,
       // numerical
       $.mod,
@@ -160,23 +160,23 @@ module.exports = grammar({
     sub: $ => prec.left(809, seq($._expr, '-', $._expr)),
     // logical
     imp: $ => prec.right(801, seq($._expr, '=>', $._expr)),
-    or:  $ => prec.left(802, seq($._expr, '||', $._expr)),
+    or: $ => prec.left(802, seq($._expr, '||', $._expr)),
     and: $ => prec.left(803, seq($._expr, '&&', $._expr)),
     neg: $ => prec.right(804, seq('~', $._expr)),
     // relational
-    eq:  $ => prec.left(805, seq($._expr, '=', $._expr)),
-    neq: $ => prec.left(805, seq($._expr, '/=', $._expr)),
-    gt:  $ => prec.left(805, seq($._expr, '>', $._expr)),
-    gte: $ => prec.left(805, seq($._expr, '>=', $._expr)),
-    lt:  $ => prec.left(805, seq($._expr, '<', $._expr)),
-    lte: $ => prec.left(805, seq($._expr, '<=', $._expr)),
+    eq: $ => prec.left(805, seq($._expr, '=', $._expr)),
+    neq: $ => prec.left(805, seq($._expr, choice('/=', '≠'), $._expr)),
+    gt: $ => prec.left(805, seq($._expr, '>', $._expr)),
+    gte: $ => prec.left(805, seq($._expr, choice('>=', '≥'), $._expr)),
+    lt: $ => prec.left(805, seq($._expr, '<', $._expr)),
+    lte: $ => prec.left(805, seq($._expr, choice('<=', '≤'), $._expr)),
 
     _term: $ => choice(
-        prec(998, seq( '(', $._expr, ')')),
-        $.integer,
-        $.variable,
-        $.constant,
-        $.boolean,
+      prec(998, seq('(', $._expr, ')')),
+      $.integer,
+      $.variable,
+      $.constant,
+      $.boolean,
     ),
 
     ////////////////////////////////////////////////////////////////////////
@@ -185,7 +185,7 @@ module.exports = grammar({
 
     // types
     _type: $ => choice(
-      prec(999, seq( '(', $._type, ')')),
+      prec(999, seq('(', $._type, ')')),
       $.type_func,
       $.type_array,
 
@@ -212,8 +212,8 @@ module.exports = grammar({
     type: $ => upperName,
 
     _type_term: $ => choice(
-        prec(998, seq( '(', $._type, ')')),
-        $.type,
+      prec(998, seq('(', $._type, ')')),
+      $.type,
     ),
 
     ////////////////////////////////////////////////////////////////////////
@@ -244,7 +244,7 @@ module.exports = grammar({
     ////////////////////////////////////////////////////////////////////////
 
     comment: $ => token(choice(
-        prec(100, seq('--', /.*/)),
+      prec(100, seq('--', /.*/)),
     )),
 
   }
@@ -252,5 +252,5 @@ module.exports = grammar({
 
 // left-associative
 function sepBy(delimeter, rule) {
-    return seq(repeat(seq(rule, delimeter)), rule)
+  return seq(repeat(seq(rule, delimeter)), rule)
 }

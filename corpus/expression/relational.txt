@@ -17,10 +17,15 @@ NEQ
 ==================
 
 { x /= y }
+{ x ≠ y }
 
 ---
 
 (source_file
+  (assert
+    (neq
+      (variable)
+      (variable)))
   (assert
     (neq
       (variable)
@@ -46,10 +51,15 @@ LTE
 ==================
 
 { x <= y }
+{ x ≤ y }
 
 ---
 
 (source_file
+  (assert
+    (lte
+      (variable)
+      (variable)))
   (assert
     (lte
       (variable)
@@ -75,10 +85,15 @@ GTE
 ==================
 
 { x >= y }
+{ x ≥ y }
 
 ---
 
 (source_file
+  (assert
+    (gte
+      (variable)
+      (variable)))
   (assert
     (gte
       (variable)
