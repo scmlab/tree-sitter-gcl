@@ -14,6 +14,76 @@ Boolean
     (boolean)))
 
 ==================
+Implication
+==================
+
+{ A => B }
+{ A ⇒ B }
+
+---
+
+(source_file
+  (assert
+    (imp
+      (constant)
+      (constant)))
+  (assert
+    (imp
+      (constant)
+      (constant))))
+
+==================
+Conjunction
+==================
+
+{ A && B }
+{ A ∧ B }
+
+---
+
+(source_file
+  (assert
+    (and
+      (constant)
+      (constant)))
+  (assert
+    (and
+      (constant)
+      (constant))))
+
+==================
+Disjunction
+==================
+
+{ A || B }
+{ A ∨ B }
+
+---
+
+(source_file
+  (assert
+    (or
+      (constant)
+      (constant)))
+  (assert
+    (or
+      (constant)
+      (constant))))
+
+==================
+Negation
+==================
+
+{ ~ A }
+
+---
+
+(source_file
+  (assert
+    (neg
+      (constant))))
+
+==================
 Logical
 ==================
 

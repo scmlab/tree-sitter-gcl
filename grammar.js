@@ -159,9 +159,9 @@ module.exports = grammar({
     add: $ => prec.left(809, seq($._expr, '+', $._expr)),
     sub: $ => prec.left(809, seq($._expr, '-', $._expr)),
     // logical
-    imp: $ => prec.right(801, seq($._expr, '=>', $._expr)),
-    or: $ => prec.left(802, seq($._expr, '||', $._expr)),
-    and: $ => prec.left(803, seq($._expr, '&&', $._expr)),
+    imp: $ => prec.right(801, seq($._expr, choice('=>', '⇒'), $._expr)),
+    or: $ => prec.left(802, seq($._expr, choice('||', '∨'), $._expr)),
+    and: $ => prec.left(803, seq($._expr, choice('&&', '∧'), $._expr)),
     neg: $ => prec.right(804, seq('~', $._expr)),
     // relational
     eq: $ => prec.left(805, seq($._expr, '=', $._expr)),
