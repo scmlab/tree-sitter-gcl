@@ -69,6 +69,7 @@ module.exports = grammar({
         $.if,
         $.do,
         $.spec,
+        $.hole,
       ),
       $._newline
     ),
@@ -110,6 +111,8 @@ module.exports = grammar({
       $._guarded_command_list,
       'od',
     ),
+
+    hole: $ => '?',
 
     spec: $ => seq(
       '{!',

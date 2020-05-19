@@ -126,6 +126,8 @@ od
 Spec
 ==================
 
+?
+
 {!
 !}
 
@@ -143,6 +145,7 @@ skip
 ---
 
 (source_file
+  (hole)
   (spec)
   (spec
     (skip))

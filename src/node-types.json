@@ -1066,6 +1066,10 @@
           "named": true
         },
         {
+          "type": "hole",
+          "named": true
+        },
+        {
           "type": "if",
           "named": true
         },
@@ -2126,6 +2130,10 @@
           "named": true
         },
         {
+          "type": "hole",
+          "named": true
+        },
+        {
           "type": "if",
           "named": true
         },
@@ -2170,6 +2178,10 @@
         },
         {
           "type": "do",
+          "named": true
+        },
+        {
+          "type": "hole",
           "named": true
         },
         {
@@ -2496,6 +2508,10 @@
   {
     "type": "fi",
     "named": false
+  },
+  {
+    "type": "hole",
+    "named": true
   },
   {
     "type": "if",
