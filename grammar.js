@@ -173,10 +173,29 @@ module.exports = grammar({
 
     _term: $ => choice(
       prec(998, seq('(', $._expr, ')')),
+      seq('(', $._operator, ')'),
       $.integer,
       $.variable,
       $.constant,
       $.boolean,
+      $.quantifier,
+    ),
+
+    _operator: $ => choice(
+      '%', '*', '/', '+', '-',
+      '=>', '⇒', '||', '∨', '&&', '∧', '~', '¬',
+      '=', '/=', '≠', '>', '>=', '≥', '<', '<=', '≤'
+    ),
+
+    quantifier: $ => seq(
+      choice('<|', '⟨'),
+      $._term,
+      repeat1($.variable),
+      ':',
+      $._expr,
+      ':',
+      $._expr,
+      choice('|>', '⟩')
     ),
 
     ////////////////////////////////////////////////////////////////////////

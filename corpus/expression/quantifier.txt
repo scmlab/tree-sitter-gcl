@@ -1,0 +1,32 @@
+==================
+Simple 1
+==================
+
+{ ⟨ f a : 0 : 0 |> }
+
+---
+
+(source_file
+  (assert
+    (quantifier
+      (variable)
+      (variable)
+      (integer)
+      (integer)
+    )))
+
+==================
+with operator 
+==================
+
+{ <| (+) a : 0 : 0 ⟩ }
+
+---
+
+(source_file
+  (assert
+    (quantifier
+      (variable)
+      (integer)
+      (integer)
+    )))
