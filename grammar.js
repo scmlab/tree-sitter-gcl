@@ -37,6 +37,7 @@ module.exports = grammar({
       choice(
         $.variable_declaration,
         $.constant_declaration,
+        $.let_declaration,
       ),
       $._newline
     ),
@@ -53,6 +54,14 @@ module.exports = grammar({
       $._constant_list,
       ':',
       $._type
+    ),
+
+    let_declaration: $ => seq(
+      'let',
+      $.constant,
+      optional($._variable_list),
+      '=',
+      $._expr
     ),
 
     ////////////////////////////////////////////////////////////////////////
@@ -251,6 +260,7 @@ module.exports = grammar({
 
     _variable_list: $ => sepBy(',', $.variable),
     _constant_list: $ => sepBy(',', $.constant),
+
     _expr_list: $ => sepBy(',', $._expr),
 
     guarded_command: $ => seq(

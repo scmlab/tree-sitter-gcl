@@ -27,3 +27,15 @@ con X, Y : Int
     (constant) (type))
   (constant_declaration
     (constant) (constant) (type)))
+
+==================
+Let declaration
+==================
+
+let P = x = 5
+
+---
+
+(source_file
+  (let_declaration
+    (constant) (eq (variable) (integer))))

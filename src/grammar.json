@@ -33,6 +33,10 @@
             {
               "type": "SYMBOL",
               "name": "constant_declaration"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "let_declaration"
             }
           ]
         },
@@ -81,6 +85,39 @@
         {
           "type": "SYMBOL",
           "name": "_type"
+        }
+      ]
+    },
+    "let_declaration": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "let"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "constant"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_variable_list"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expr"
         }
       ]
     },
