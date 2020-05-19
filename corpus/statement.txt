@@ -99,7 +99,7 @@ If 2
 ==================
 
 if True -> skip
- | False -> abort
+ | False → abort
 fi
 
 ---
@@ -113,7 +113,7 @@ fi
 Do
 ==================
 
-do True -> skip
+do True → skip
 od
 
 ---

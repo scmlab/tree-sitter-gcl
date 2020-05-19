@@ -162,7 +162,7 @@ module.exports = grammar({
     imp: $ => prec.right(801, seq($._expr, choice('=>', '⇒'), $._expr)),
     or: $ => prec.left(802, seq($._expr, choice('||', '∨'), $._expr)),
     and: $ => prec.left(803, seq($._expr, choice('&&', '∧'), $._expr)),
-    neg: $ => prec.right(804, seq('~', $._expr)),
+    neg: $ => prec.right(804, seq(choice('~', '¬'), $._expr)),
     // relational
     eq: $ => prec.left(805, seq($._expr, '=', $._expr)),
     neq: $ => prec.left(805, seq($._expr, choice('/=', '≠'), $._expr)),
@@ -193,7 +193,7 @@ module.exports = grammar({
       $._type_term,
     ),
 
-    type_func: $ => prec.right(800, seq($._type, '->', $._type)),
+    type_func: $ => prec.right(800, seq($._type, choice('->', '→'), $._type)),
     type_array: $ => prec.right(801, seq(
       'array',
       $.interval,
@@ -233,7 +233,7 @@ module.exports = grammar({
 
     guarded_command: $ => seq(
       $._expr,
-      '->',
+      choice('->', '→'),
       repeat1($._statement),
     ),
 

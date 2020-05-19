@@ -75,10 +75,14 @@ Negation
 ==================
 
 { ~ A }
+{ ¬ A }
 
 ---
 
 (source_file
+  (assert
+    (neg
+      (constant)))
   (assert
     (neg
       (constant))))
